@@ -13,7 +13,7 @@ import {
   FaBell,
   FaCloud,
   FaCogs,
-  // FaUsers,
+  FaUsers,
 } from "react-icons/fa";
 
 const experiences = [
@@ -65,12 +65,6 @@ const experiences = [
         description:
           "Integrated and customized Contentful and Strapi CMS for dynamic content management",
       },
-      // {
-      //   icon: <FaUsers className="text-blue-500" />,
-      //   title: "Agile Development",
-      //   description:
-      //     "Worked in Agile environment with two-week sprints and Jira-based task management",
-      // },
     ],
     technologies: [
       "Vue.js",
@@ -106,6 +100,12 @@ const experiences = [
         title: "CMS Integration",
         description:
           "Integrated Contentful CMS for dynamic content management and updates",
+      },
+      {
+        icon: <FaUsers className="text-blue-500" />,
+        title: "Agile Development",
+        description:
+          "Worked in Agile environment with two-week sprints and Jira-based task management",
       },
     ],
     technologies: [
@@ -225,56 +225,90 @@ const ExperienceSection: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="space-y-4"
+                        className="space-y-4 relative"
                       >
-                        <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                            Key Achievements
-                          </h3>
-                          <div className="grid gap-4">
-                            {exp.keyAchievements.map((achievement, idx) => (
-                              <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3, delay: idx * 0.1 }}
-                                className="flex items-start gap-3"
-                              >
-                                <div className="text-xl">
-                                  {achievement.icon}
-                                </div>
-                                <div>
-                                  <h5 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
-                                    {achievement.title}
-                                  </h5>
-                                  <p className="text-sm text-gray-600 dark:text-gray-300">
-                                    {achievement.description}
-                                  </p>
-                                </div>
-                              </motion.div>
-                            ))}
+                        {/* Vertical line */}
+                        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-500"></div>
+
+                        {/* Key Achievements section with left padding for vertical line */}
+                        <div className="pl-8">
+                          <div className="relative">
+                            <div
+                              className="absolute inset-0 flex items-center"
+                              aria-hidden="true"
+                            >
+                              <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+                            </div>
+                            <div className="relative flex justify-center">
+                              <span className="px-4 bg-white dark:bg-gray-900 text-sm font-medium text-gray-500 dark:text-gray-400">
+                                Key Achievements
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 mt-4">
+                            <div className="grid gap-4">
+                              {exp.keyAchievements.map((achievement, idx) => (
+                                <motion.div
+                                  key={idx}
+                                  initial={{ opacity: 0, y: 20 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{
+                                    duration: 0.3,
+                                    delay: idx * 0.1,
+                                  }}
+                                  className="flex items-start gap-3"
+                                >
+                                  <div className="text-xl">
+                                    {achievement.icon}
+                                  </div>
+                                  <div>
+                                    <h5 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
+                                      {achievement.title}
+                                    </h5>
+                                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                                      {achievement.description}
+                                    </p>
+                                  </div>
+                                </motion.div>
+                              ))}
+                            </div>
                           </div>
                         </div>
 
-                        <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                            Technologies Used
-                          </h3>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.technologies.map((tech, idx) => (
-                              <motion.span
-                                key={idx}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{
-                                  duration: 0.2,
-                                  delay: idx * 0.05,
-                                }}
-                                className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm"
-                              >
-                                {tech}
-                              </motion.span>
-                            ))}
+                        {/* Technologies section with left padding for vertical line */}
+                        <div className="pl-8">
+                          <div className="relative">
+                            <div
+                              className="absolute inset-0 flex items-center"
+                              aria-hidden="true"
+                            >
+                              <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+                            </div>
+                            <div className="relative flex justify-center">
+                              <span className="px-4 bg-white dark:bg-gray-900 text-sm font-medium text-gray-500 dark:text-gray-400">
+                                Technologies Used
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 mt-4">
+                            <div className="flex flex-wrap gap-2">
+                              {exp.technologies.map((tech, idx) => (
+                                <motion.span
+                                  key={idx}
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  animate={{ opacity: 1, scale: 1 }}
+                                  transition={{
+                                    duration: 0.2,
+                                    delay: idx * 0.05,
+                                  }}
+                                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm"
+                                >
+                                  {tech}
+                                </motion.span>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </motion.div>
