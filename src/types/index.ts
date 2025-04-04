@@ -1,13 +1,12 @@
-export interface ContactInfo {
-  email: string;
-  phone: string;
-  location: string;
-  socialLinks: {
-    github: string;
-    linkedin: string;
-  };
-}
+import { StaticImageData } from "next/image";
 
+export interface SocialLink {
+  icon: React.ReactElement;
+  href?: string;
+  label: string;
+  displayValue?: string;
+  isDisplayOn?: string[];
+}
 export interface NavItem {
   name: string;
   href: string;
@@ -41,4 +40,13 @@ export interface FeatureCard {
   icon: React.ReactNode;
   title: string;
   description: string;
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  image: StaticImageData;
+  tags: string[];
+  github: string;
+  live: string;
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
+import { SOCIAL_LINKS } from "@/config/common.config";
 
 export default function HeroSection() {
   return (
@@ -69,11 +70,9 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex gap-6"
           >
-            {[
-              { icon: <FaGithub />, href: "#", label: "GitHub" },
-              { icon: <FaLinkedin />, href: "#", label: "LinkedIn" },
-              { icon: <FaTwitter />, href: "#", label: "Twitter" },
-            ].map((social, index) => (
+            {SOCIAL_LINKS.filter((social) =>
+              social.isDisplayOn?.includes("Hero")
+            ).map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
@@ -108,8 +107,15 @@ export default function HeroSection() {
 
                 {/* Main Profile Circle */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 p-1">
-                  <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
-                    <span className="text-6xl font-bold text-blue-600">YN</span>
+                  <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+                    <span className="text-6xl font-bold text-blue-600">
+                      <Image
+                        src={"/images/profile.png"}
+                        alt="Trilok Harmukh"
+                        width={256}
+                        height={256}
+                      />
+                    </span>
                   </div>
                 </div>
               </div>

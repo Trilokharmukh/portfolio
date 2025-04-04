@@ -2,30 +2,15 @@
 
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce platform built with Next.js and Stripe integration.",
-    image: "https://via.placeholder.com/600x400",
-    tags: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
-    github: "#",
-    live: "#",
-  },
-];
+import { PROJECTS } from "@/config/project.config";
+import Image from "next/image";
 
 export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-blue-400/20 to-indigo-400/20 transform"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 to-transparent"></div>
-      </div>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +21,7 @@ export default function ProjectsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 4 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -51,12 +36,12 @@ export default function ProjectsSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {PROJECTS.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.1, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
               className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
@@ -64,9 +49,12 @@ export default function ProjectsSection() {
               <div className="relative h-48 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">
-                    Project {index + 1}
-                  </span>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={600}
+                    height={400}
+                  />
                 </div>
               </div>
               <div className="p-6">
@@ -89,6 +77,7 @@ export default function ProjectsSection() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href={project.github}
+                    target="_blank"
                     className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
                   >
                     <FaGithub />
@@ -98,6 +87,7 @@ export default function ProjectsSection() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href={project.live}
+                    target="_blank"
                     className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
                   >
                     <FaExternalLinkAlt />
