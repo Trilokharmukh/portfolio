@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Frontend Developer",
+  title: "Portfolio | Trilok Harmukh | Frontend Developer",
   description:
-    "A modern portfolio website showcasing my work as a frontend developer",
+    "I am a Front End Developer, I have strong skills in Vue.js, Nuxt.js, React, and Next.js, which help me build user-friendly and responsive websites and Improve SEO, Web performance.",
 };
 
 export default function RootLayout({
