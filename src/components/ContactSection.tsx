@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import { CONTACT_INFO } from "@/config/constants";
+import { SOCIAL_LINKS } from "@/config/common.config";
 
 export default function ContactSection() {
   return (
-    <section
+    <div
       id="contact"
       className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 relative overflow-hidden"
     >
@@ -38,7 +37,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-12 mx-auto">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -51,46 +50,23 @@ export default function ContactSection() {
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
-                    <FaEnvelope className="text-blue-600 text-xl" />
+              <div className="space-y-6 flex gap-4 flex-wrap grid grid-cols-1 md:grid-cols-4">
+                {SOCIAL_LINKS.map((link, index) => (
+                  <div className="flex items-start gap-4 md:m-auto" key={index}>
+                    <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                      <span className="text-blue-600 text-xl">{link.icon}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-1">{link.label}</h4>
+                      <a
+                        href={`mailto:${link.href}`}
+                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                      >
+                        {link.displayValue}
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-medium mb-1">Email</h4>
-                    <a
-                      href={`mailto:${CONTACT_INFO.email}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      {CONTACT_INFO.email}
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
-                    <FaPhone className="text-blue-600 text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-1">Phone</h4>
-                    <a
-                      href={`tel:${CONTACT_INFO.phone}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      {CONTACT_INFO.phone}
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
-                    <FaMapMarkerAlt className="text-blue-600 text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-1">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {CONTACT_INFO.location}
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -101,7 +77,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg relative z-20"
+            className="hidden bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg relative z-20"
           >
             <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
             <form className="space-y-6">
@@ -141,6 +117,6 @@ export default function ContactSection() {
           </motion.div>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 }

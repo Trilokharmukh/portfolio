@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { NAV_ITEMS } from "@/config/constants";
+import { NAV_ITEMS } from "@/config/common.config";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
