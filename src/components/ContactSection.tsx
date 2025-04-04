@@ -59,7 +59,7 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-medium mb-1">{link.label}</h4>
                       <a
-                        href={`mailto:${link.href}`}
+                        href={link.href}
                         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                       >
                         {link.displayValue}

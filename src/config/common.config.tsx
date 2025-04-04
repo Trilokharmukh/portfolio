@@ -4,6 +4,7 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaPhone,
+  FaWhatsapp,
   // FaMapMarkerAlt,
 } from "react-icons/fa";
 
@@ -34,6 +35,13 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "tel:+919770874996",
     label: "Phone",
     displayValue: "+91 9770874996",
+    isDisplayOn: ["Contact", "Hero"],
+  },
+  {
+    icon: <FaWhatsapp />,
+    href: "https://wa.me/919770874996",
+    label: "WhatsApp",
+    displayValue: "WhatsApp",
     isDisplayOn: ["Contact", "Hero"],
   },
   // {

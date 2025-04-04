@@ -68,7 +68,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex gap-6"
+            className="flex gap-6 flex-wrap"
           >
             {SOCIAL_LINKS.filter((social) =>
               social.isDisplayOn?.includes("Hero")
