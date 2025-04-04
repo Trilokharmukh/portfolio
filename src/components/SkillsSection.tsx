@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SKILLS } from "@/config/constants";
+import { SKILLS } from "@/config/common.config";
 
 const containerVariants = {
   hidden: { opacity: 0 },
