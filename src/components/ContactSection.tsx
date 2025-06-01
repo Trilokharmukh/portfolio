@@ -60,6 +60,7 @@ export default function ContactSection() {
                       <h4 className="font-medium mb-1">{link.label}</h4>
                       <a
                         href={link.href}
+                        target="_blank"
                         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                       >
                         {link.displayValue}

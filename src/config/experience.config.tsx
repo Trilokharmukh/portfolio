@@ -11,6 +11,7 @@ import {
 
 export const EXPERIENCES = [
   {
+    id: "jsw-one-platforms",
     company: "JSW One Platforms",
     position: "Software Development Engineer I",
     location: "Mumbai",
@@ -77,6 +78,7 @@ export const EXPERIENCES = [
     ],
   },
   {
+    id: "mountblue-technologies",
     company: "MountBlue Technologies",
     position: "Software Development Engineer I",
     location: "Mumbai",

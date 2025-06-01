@@ -76,6 +76,7 @@ export default function HeroSection() {
               <motion.a
                 key={index}
                 href={social.href}
+                target="_blank"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer"

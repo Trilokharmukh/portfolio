@@ -104,100 +104,100 @@ const ExperienceSection: React.FC = () => {
                 {/* Mobile Achievements */}
                 <div className="md:hidden mt-4">
                   <AnimatePresence mode="wait">
-                    {hoveredExperience === index && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3 }}
-                        className="space-y-4 relative"
-                      >
-                        {/* Vertical line */}
-                        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-500"></div>
+                    {/* {hoveredExperience === index && ( */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3 }}
+                      className="space-y-4 relative"
+                    >
+                      {/* Vertical line */}
+                      <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-500"></div>
 
-                        {/* Key Achievements section with left padding for vertical line */}
-                        <div className="pl-8">
-                          <div className="relative">
-                            <div
-                              className="absolute inset-0 flex items-center"
-                              aria-hidden="true"
-                            >
-                              <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
-                            </div>
-                            <div className="relative flex justify-center">
-                              <span className="px-4 bg-white dark:bg-gray-900 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                Key Achievements
-                              </span>
-                            </div>
+                      {/* Key Achievements section with left padding for vertical line */}
+                      <div className="pl-8">
+                        <div className="relative">
+                          <div
+                            className="absolute inset-0 flex items-center"
+                            aria-hidden="true"
+                          >
+                            <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
                           </div>
-
-                          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 mt-4">
-                            <div className="grid gap-4">
-                              {exp.keyAchievements.map((achievement, idx) => (
-                                <motion.div
-                                  key={idx}
-                                  initial={{ opacity: 0, y: 20 }}
-                                  animate={{ opacity: 1, y: 0 }}
-                                  transition={{
-                                    duration: 0.3,
-                                    delay: idx * 0.1,
-                                  }}
-                                  className="flex items-start gap-3"
-                                >
-                                  <div className="text-xl">
-                                    {achievement.icon}
-                                  </div>
-                                  <div>
-                                    <h5 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
-                                      {achievement.title}
-                                    </h5>
-                                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                                      {achievement.description}
-                                    </p>
-                                  </div>
-                                </motion.div>
-                              ))}
-                            </div>
+                          <div className="relative flex justify-center">
+                            <span className="px-4 bg-white dark:bg-gray-900 text-sm font-medium text-gray-500 dark:text-gray-400">
+                              Key Achievements
+                            </span>
                           </div>
                         </div>
 
-                        {/* Technologies section with left padding for vertical line */}
-                        <div className="pl-8">
-                          <div className="relative">
-                            <div
-                              className="absolute inset-0 flex items-center"
-                              aria-hidden="true"
-                            >
-                              <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
-                            </div>
-                            <div className="relative flex justify-center">
-                              <span className="px-4 bg-white dark:bg-gray-900 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                Technologies Used
-                              </span>
-                            </div>
-                          </div>
-
-                          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 mt-4">
-                            <div className="flex flex-wrap gap-2">
-                              {exp.technologies.map((tech, idx) => (
-                                <motion.span
-                                  key={idx}
-                                  initial={{ opacity: 0, scale: 0.8 }}
-                                  animate={{ opacity: 1, scale: 1 }}
-                                  transition={{
-                                    duration: 0.2,
-                                    delay: idx * 0.05,
-                                  }}
-                                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm"
-                                >
-                                  {tech}
-                                </motion.span>
-                              ))}
-                            </div>
+                        <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 mt-4">
+                          <div className="grid gap-4">
+                            {exp.keyAchievements.map((achievement, idx) => (
+                              <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                  duration: 0.3,
+                                  delay: idx * 0.1,
+                                }}
+                                className="flex items-start gap-3"
+                              >
+                                <div className="text-xl">
+                                  {achievement.icon}
+                                </div>
+                                <div>
+                                  <h5 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
+                                    {achievement.title}
+                                  </h5>
+                                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                                    {achievement.description}
+                                  </p>
+                                </div>
+                              </motion.div>
+                            ))}
                           </div>
                         </div>
-                      </motion.div>
-                    )}
+                      </div>
+
+                      {/* Technologies section with left padding for vertical line */}
+                      <div className="pl-8">
+                        <div className="relative">
+                          <div
+                            className="absolute inset-0 flex items-center"
+                            aria-hidden="true"
+                          >
+                            <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+                          </div>
+                          <div className="relative flex justify-center">
+                            <span className="px-4 bg-white dark:bg-gray-900 text-sm font-medium text-gray-500 dark:text-gray-400">
+                              Technologies Used
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 mt-4">
+                          <div className="flex flex-wrap gap-2">
+                            {exp.technologies.map((tech, idx) => (
+                              <motion.span
+                                key={idx}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{
+                                  duration: 0.2,
+                                  delay: idx * 0.05,
+                                }}
+                                className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm"
+                              >
+                                {tech}
+                              </motion.span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                    {/* )} */}
                   </AnimatePresence>
                 </div>
               </div>

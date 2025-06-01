@@ -41,7 +41,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: <FaWhatsapp />,
     href: "https://wa.me/919770874996",
     label: "WhatsApp",
-    displayValue: "WhatsApp",
+    displayValue: "9770874996",
     isDisplayOn: ["Contact", "Hero"],
   },
   // {
